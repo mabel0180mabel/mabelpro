@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universities in Sierra Leone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Bright-Route SL</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Universities.html" class="active">Universities</a></li>
+            <li><a href="vocationaltraining.html">Vocational Centers</a></li>
+            <li><a href="training.html">Training Institutes</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Universities in Sierra Leone</h1>
+        <p>Find universities across Sierra Leone offering various degree programs.</p>
+    </header>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <input type="text" id="search" placeholder="Search for a university...">
+        <button id="search-btn">Search</button>
+    </section>
+
+    <!-- University List Section -->
+    <section id="universities-list" class="container">
+        <h2 class="section-title">List of Universities</h2>
+        <div class="card-grid" id="university-cards">
+            <!-- Example University Cards (You can dynamically generate these) -->
+            <div class="card">
+                <!-- University Image -->
+                <img src="uni.jpg" alt="University of Sierra Leone" class="university-photo">
+                
+                <!-- University Details -->
+                <h3>University of Sierra Leone</h3>
+                <p>Offers degree programs in business, engineering, health sciences, ICT, and more.</p>
+                <button>View Profile</button>
+            </div>
+            
+            <div class="card">
+                 <!-- University Image -->
+                 <img src="download.png" alt="University ofn Makeni" class="university-photo">
+                <h3>University of Makeni (UNIMAK)</h3>
+                <p>Known for social sciences, ICT, law, and development studies.</p>
+                <button>View Profile</button>
+            </div>
+            <div class="card">
+                 <!-- University Image -->
+                 <img src="download.jpeg" alt="Njala University" class="university-photo">
+                <h3>Njala University</h3>
+                <p>Agriculture, engineering, education, applied sciences, and more.</p>
+                <button>View Profile</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>2025 Bright-Route Sierra Leone. All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Simple Search Functionality
+        const searchButton = document.getElementById('search-btn');
+        const searchInput = document.getElementById('search');
+        const universityCards = document.querySelectorAll('.card');
+        
+        searchButton.addEventListener('click', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            
+            universityCards.forEach(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    card.style.display = 'block'; // Show card
+                } else {
+                    card.style.display = 'none'; // Hide card
+                }
+            });
+        });
+    </script>
+</body>
+</html>
